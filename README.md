@@ -1,6 +1,17 @@
 # TPE Predict Force
 
-ResNet18-based regression model that predicts **contact force magnitude and angle** from grayscale particle contact-region images.
+This repository contains code for training a ResNet18-based regression model that predicts **contact force magnitude and angle** from grayscale particle contact-region images, like the following image:
+
+ ![Demo results](sample_data.png)
+
+To train the model, we generated multiple synthetic images of photoelastic disks subject to randomly generated vector forces at random contact points. Note that the force vectors are assigned such that each disk is in equilibrium. We then crop out the contact regions from these synthetic images and use them as training data, with the known force magnitudes and angles as labels. The trained model can then be applied to real experimental images to estimate the underlying contact forces.
+
+Crucially, the method outperforms the traditional G^2 approximation in wet disks, leading to better results in the ensuing force inversion process.
+
+<table><tr>
+<td><img src="G2_results.png" alt="G2 results"/></td>
+<td><img src="CNN_results.png" alt="CNN results"/></td>
+</tr></table>
 
 ---
 
