@@ -1,0 +1,13 @@
+# Trained model weights
+*.pth
+*.pt
+
+# Training data
+*_data/
+data/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
